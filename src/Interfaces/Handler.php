@@ -7,6 +7,6 @@ namespace Tiler\Interfaces;
 interface Handler
 {
     public function connect(Handler $handler) : void;
-    public function handle(string $path, \ArrayAccess $data) : string;
+    public function handle(string $path) : string;
 }
 
