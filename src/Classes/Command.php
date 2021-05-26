@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types = 1);
+
 namespace Tiler\Classes;
 
 class Command implements \Tiler\Interfaces\Command
