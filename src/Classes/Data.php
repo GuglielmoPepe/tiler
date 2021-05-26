@@ -30,12 +30,12 @@ class Data implements \ArrayAccess
 
     public function offsetSet($offset, $value)
     {
-        throw new Exception\MethodCallNotAllowed();
+        throw new Exceptions\MethodCallNotAllowed();
     }
 
     public function offsetUnset($offset)
     {
-        throw new Exception\MethodCallNotAllowed();
+        throw new Exceptions\MethodCallNotAllowed();
     }
 }
 

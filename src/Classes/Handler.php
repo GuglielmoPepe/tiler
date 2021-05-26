@@ -43,7 +43,7 @@ class Handler implements \Tiler\Interfaces\Handler
             return $this->successor->handle($file);
         }
 
-        throw new Exception\HandlerClassNotFound();
+        throw new Exceptions\HandlerClassNotFound();
     }
 }
 
