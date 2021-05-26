@@ -1,0 +1,21 @@
+{
+  "name": "guglielmopepe/tiler",
+  "description": "Tiler provides a flexible, fast, and secure template engine.",
+  "keywords": ["template", "engine"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Guglielmo Pepe",
+      "homepage": "https://www.guglielmopepe.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tiler\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.2"
+  }
+}
