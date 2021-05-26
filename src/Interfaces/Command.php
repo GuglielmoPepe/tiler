@@ -4,6 +4,6 @@ namespace Tiler\Interfaces;
 
 interface Command
 {
-    public function render(string $path) : string;
+    public function render(string $file) : string;
 }
 
