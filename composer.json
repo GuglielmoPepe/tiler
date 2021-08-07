@@ -1,5 +1,5 @@
 {
-  "name": "guglielmopepe/tiler",
+  "name": "GuglielmoPepe/tiler",
   "description": "Tiler provides a flexible, fast, and secure template engine.",
   "keywords": ["template", "engine"],
   "license": "MIT",
@@ -16,6 +16,6 @@
     }
   },
   "require": {
-    "php": "^7.2"
+    "php": "^8.0"
   }
 }
