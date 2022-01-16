@@ -91,6 +91,12 @@ If you discover a security vulnerability, please send an email to Guglielmo Pepe
 ### Why use Data class with ArrayAccess interface?
 The Data class allows you to pass data as if it were an array, but by extending the class you can also pass a Service Locator: you have an HMVC.
 
+### Why does Tiler have three separate classes?
+Tiler has three separate classes for maximum flexibility:
+- You can use the Data class with a service Locator or as a Simple array;
+- You can use the Handler class in combination with a Strategy to load the template on a per-user basis;
+- You can use the Command class in conjunction with a Proxy to delay loading data into the template.
+
 ## Contributing
 If you want to say **thank you** and/or support the active development of `tiler`:
 

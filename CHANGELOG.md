@@ -6,4 +6,9 @@ and this package adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## 1.0.0 - 2022-01-16
+
+### Added
+- Add FAQ section in README.md
+- Add documentation in README.md
 
