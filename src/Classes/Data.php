@@ -4,38 +4,74 @@ declare(strict_types = 1);
 
 namespace Tiler\Classes;
 
-class Data implements \ArrayAccess
+class Data implements \Tiler\Interfaces\Data
 {
-    private $records;
+    protected $records;
 
     public function __construct(array $records = [])
     {
         $this->records = $records;
     }
 
-    public function offsetExists($offset)
+    public function count() : int
+    {
+        return count($this->records);
+    }
+
+    public function getIterator() : \Traversable
+    {
+        return new \ArrayIterator($this->records);
+    }
+
+    public function jsonSerialize() : mixed
+    {
+        return $this->records;
+    }
+
+    public function offsetExists($offset) : bool
     {
         return isset($this->records[$offset]) ? TRUE : FALSE;
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         if ( ! isset($this->records[$offset]))
         {
-            throw new \Exception('The record ' . $offset . '  doesn\'t exists!');
+            throw new \OutOfRangeException('The record ' . $offset . '  doesn\'t exists!');
         }
 
         return $this->records[$offset];
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value) : void
     {
-        throw new Exceptions\MethodCallNotAllowed();
+        throw new \RuntimeException('The method call not allowed!');
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset) : void
     {
-        throw new Exceptions\MethodCallNotAllowed();
+        throw new \RuntimeException('The method call not allowed!');
+    }
+
+    public function serialize() : ?string
+    {
+        return serialize($this->records);
+    }
+
+    public function unserialize($records) : void
+    {
+        $this->records = unserialize($records);
+    }
+    
+    
+    public function __serialize() : array
+    {
+        return $this->records;
+    }
+
+    public function __unserialize(array $records) : void
+    {
+        $this->records = $records;
     }
 }
 
